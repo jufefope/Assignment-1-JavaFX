@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.premier.MainController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Select Season:"/>
+    <ComboBox fx:id="seasonComboBox" onAction="#loadSeasonData"/>
+
+    <Label text="Select Team:"/>
+    <ComboBox fx:id="teamComboBox"/>
+
+    <TableView fx:id="dataTable">
+        <columns>
+            <TableColumn text="Team" fx:id="teamColumn"/>
+            <TableColumn text="Played" fx:id="playedColumn"/>
+            <TableColumn text="Wins" fx:id="winsColumn"/>
+            <TableColumn text="Draws" fx:id="drawsColumn"/>
+            <TableColumn text="Losses" fx:id="lossesColumn"/>
+            <TableColumn text="Goals For" fx:id="goalsForColumn"/>
+            <TableColumn text="Goals Against" fx:id="goalsAgainstColumn"/>
+            <TableColumn text="Points" fx:id="pointsColumn"/>
+        </columns>
+    </TableView>
+
+    <Button text="View Team Stats" onAction="#loadTeamStatsView"/>
+    <Button text="View Pie Chart" onAction="#loadPieChartView"/>
+</VBox>
